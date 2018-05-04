@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript">
+  window.onload = function () {
+	
+
+	
+       var tem=[
+      { x: 1, y: {{a1}}},
+        { x: 2, y: {{a2}}},
+        { x: 3, y: {{a3}}},
+        { x: 4, y: {{a4}}},
+        { x: 5, y: {{a5}}},
+        { x: 6, y: {{a6}}},
+	{ x: 7, y: {{a7}}}
+        ] 
+      var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+          text: " Change in speed"
+      },
+      axisX:{
+        interval: 1,
+        intervalType: "minute",
+        valueFormatString: "",
+      },
+	axisY:{
+        interval: 50,
+        valueFormatString: "#0.## "
+        
+      },
+      data: [
+      {
+        type: "line",
+        dataPoints: tem
+     }
+     ]
+});
+
+chart.render();
+
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body style="color:#6495ED;">
+<center>
+  <div id="chartContainer" style="height: 500px; width: 80%;"></div>
+  <br>
+<br>
+
+</center>
+  
+</body>
+</html>

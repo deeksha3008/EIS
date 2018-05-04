@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<title>group-6</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+ if({d}}>20)
+   {x=&#8594}
+   else if({{d}}<-20)
+	{x=&#8592}
+   else if({{e}}>20)
+	{x=&#8593}
+	else if({{e}}<-20)
+	{x=&#8595}
+	else
+	{x=&#8596}
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Group</b>-6</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#alerts" class="w3-bar-item w3-button">Alerts</a>
+      <a href="pulse.html" class="w3-bar-item w3-button">PulseRate</a>
+      <a href="#contact" class="w3-bar-item w3-button">Speed</a>
+      <a href="#googleMap" class="w3-bar-item w3-button">Location</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="http://sterlingtowing.com/blog/wp-content/uploads/2012/09/accident-avoidance.jpeg" alt="Accident Avoidance&Detection " width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Accident Avoidance & Detection </b></span> 
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="alerts">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Alerts</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">{{g}}</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgec9jKjyL_5sN5xQhtI2iqt4k7UFOEBh1-dBu8CQw8yooOZPD" alt="House" style="height:500px width:600px">
+
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Value of smoke is {{h}}</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSahwaPpQma9wOKV70vHe56Md-l_9vVvzRqd-WDU8uk0Vub8KJbLA" alt="House" style="height:500px width:600px">
+      </div>
+    </div>
+  
+
+   <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">{{f}} </div>
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRcEBhUXG9gIMUnLons8XY3f6txqi6BnscoVmjWvthVTHhwYmtARfEUTJ-7" alt="House" style="height:300px width:300px">
+      </div>
+    </div>
+  
+  </div>
+
+  
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+  
+ <script>
+function redraw()
+{
+	draw(document.getElementById("myList").value);
+}
+function draw(speed)
+{
+      var  canvas = document.getElementById("myCanvas");
+      var  context = canvas.getContext("2d");
+      context.clearRect(0,0,canvas.width, canvas.height);
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = canvas.height / 2 - 20;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, Math.PI*0.10, Math.PI*-1.1, true);
+
+      var gradience = context.createRadialGradient(centerX, centerY, radius-radius/2, centerX, centerY, radius-radius/8);
+       gradience.addColorStop(0, '#ff9000');
+       gradience.addColorStop(1, '#000000');
+
+       context.fillStyle = gradience;
+       context.fill();
+       context.closePath();
+       context.restore();
+
+	context.beginPath();
+	context.strokeStyle = '#ffff00';
+	context.translate(centerX,centerY);
+	var increment = 5;
+	context.font="15px Helvetica";
+	for (var i=-18; i<=18; i++)
+	{
+		angle = Math.PI/30*i;
+		sineAngle = Math.sin(angle);
+		cosAngle = -Math.cos(angle);
+
+		if (i % 5 == 0) {
+		context.lineWidth = 8;
+		iPointX = sineAngle *(radius -radius/4);
+		iPointY = cosAngle *(radius -radius/4);
+		oPointX = sineAngle *(radius -radius/7);
+		oPointY = cosAngle *(radius -radius/7);
+
+		wPointX = sineAngle *(radius -radius/2.5);
+		wPointY = cosAngle *(radius -radius/2.5);
+		context.fillText((i+18)*increment,wPointX-2,wPointY+4);
+		}
+		else
+		{
+		context.lineWidth = 2; 			
+		iPointX = sineAngle *(radius -radius/5.5);
+		iPointY = cosAngle *(radius -radius/5.5);
+		oPointX = sineAngle *(radius -radius/7);
+		oPointY = cosAngle *(radius -radius/7);
+		}
+		context.beginPath();
+		context.moveTo(iPointX,iPointY);
+		context.lineTo(oPointX,oPointY);
+		context.stroke();
+		context.closePath();
+	}
+	var numOfSegments = speed/increment;
+	numOfSegments = numOfSegments -18;
+	angle = Math.PI/30*numOfSegments;
+	sineAngle = Math.sin(angle);
+	cosAngle = -Math.cos(angle);
+	pointX = sineAngle *(3/4*radius);
+	pointY = cosAngle *(3/4*radius);
+
+	context.beginPath();
+	context.strokeStyle = '#000000';
+	context.arc(0, 0, 19, 0, 2*Math.PI, true);
+	context.fill();
+        context.closePath();
+
+	context.beginPath();    	
+	context.lineWidth=6;
+	context.moveTo(0,0);
+        context.lineTo(pointX,pointY);
+        context.stroke();
+        context.closePath();
+        context.restore();
+        context.translate(-centerX,-centerY);
+}
+</script> 
+</head>
+<body onload="draw({{c}});">
+<div>
+<h1><b>speed</b>= {{c}} </h1> 
+
+
+
+</div>
+<canvas class="canvas" id="myCanvas" width="600" height="600">
+Your browser does not support the HTML5 canvas tag.</canvas>
+  
+<!-- End page content -->
+</div>
+
+<!-- Google Map -->
+<div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
+
+
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng({{a}},{{b}});
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGYnOSw_ByS5jzZhnkGIV1Yy67lSj4yKY&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
